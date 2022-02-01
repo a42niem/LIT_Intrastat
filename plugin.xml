@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="it.idIta.idempiere.LIT_Intrastat.process.GenerateFileIntrastat"
+         point="org.adempiere.base.Process">
+      <process
+            class="it.idIta.idempiere.LIT_Intrastat.process.GenerateFileIntrastat">
+      </process>
+   </extension>
+   <extension
+         id="it.idIta.idempiere.LIT_Intrastat.callout.Call_VATSummary"
+         point="org.adempiere.base.IColumnCallout">
+      <callout
+            class="it.idIta.idempiere.LIT_Intrastat.callout.Call_VATSummary"
+            columnName="DepositAmt"
+            tableName="LIT_VAT_Summary">
+      </callout>
+   </extension>
+   <extension
+         id="it.idIta.idempiere.LIT_Intrastat.process.CreateSummaryIntrastat"
+         point="org.adempiere.base.Process">
+      <process
+            class="it.idIta.idempiere.LIT_Intrastat.process.CreateSummaryIntrastat">
+      </process>
+   </extension>
+
+</plugin>
