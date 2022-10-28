@@ -149,7 +149,8 @@ public class GenerateFileIntrastat extends SvrProcess {
 					+ "JOIN c_country c ON l.c_country_id=c.c_country_id " 
 					+ "where i.ad_org_id=? and i.issotrx=? " 
 					+ "and intra.IsManufactured=? and  i.dateacct >= ? and i.dateacct <= ? " //and intra.IsManufactured=? "(Y/N) 
-					+ "and c.name!='Italy' and bpl.isbillto='Y' and i.LIT_VATJournal_ID=?" 
+					+ "and c.name!='Italy' and bpl.isbillto='Y' "
+					+ ((vatJournal_ID>0)?"and i.LIT_VATJournal_ID=?":" ") 
 					+ "group by i.ad_client_id, i.ad_org_id, i.issotrx, i.c_bpartner_id, i.c_currency_id,i.paymentrule, bp.value, bp.lit_taxid," 
 					+ "bp.name,oi.taxid, c.countrycode, int.actualamt,int.weight,int.LIT_Intrastat_ID, intra.value";
 			
